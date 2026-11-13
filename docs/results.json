@@ -1,0 +1,112 @@
+{
+  "power_calibration": [
+    {
+      "baseline": 0.05,
+      "relative_mde": 0.2,
+      "n_per_group": 8143,
+      "target_power": 0.8,
+      "empirical_power": 0.7905
+    },
+    {
+      "baseline": 0.1,
+      "relative_mde": 0.1,
+      "n_per_group": 14745,
+      "target_power": 0.8,
+      "empirical_power": 0.784
+    },
+    {
+      "baseline": 0.3,
+      "relative_mde": 0.05,
+      "n_per_group": 14855,
+      "target_power": 0.8,
+      "empirical_power": 0.8005
+    }
+  ],
+  "peeking": {
+    "null": {
+      "fixed_horizon_1_look": 0.03666666666666667,
+      "naive_peeking_20_looks": 0.29333333333333333,
+      "msprt_20_looks": 0.01,
+      "obrien_fleming_5_looks": 0.056666666666666664,
+      "msprt_avg_sample_when_stopped": 7048.666666666667
+    },
+    "effect": {
+      "fixed_horizon_1_look": 0.93,
+      "naive_peeking_20_looks": 0.9566666666666667,
+      "msprt_20_looks": 0.7,
+      "obrien_fleming_5_looks": 0.92,
+      "msprt_avg_sample_when_stopped": 12137.642857142857
+    },
+    "fixed_sample_n": 20000
+  },
+  "multiple_testing": {
+    "none": {
+      "family_wise_error": 0.526,
+      "false_discovery_rate": 0.12507063492063492,
+      "power": 0.8498000000000001
+    },
+    "bonferroni": {
+      "family_wise_error": 0.033,
+      "false_discovery_rate": 0.01035,
+      "power": 0.4832
+    },
+    "fdr_bh": {
+      "family_wise_error": 0.142,
+      "false_discovery_rate": 0.03395357142857143,
+      "power": 0.647
+    }
+  },
+  "causal_recovery": {
+    "naive": {
+      "mean_estimate": 3.5462757099153164,
+      "bias": 1.5462757099153164,
+      "rmse": 1.55334398695856
+    },
+    "psm": {
+      "mean_estimate": 2.0945741938483016,
+      "bias": 0.09457419384830157,
+      "rmse": 0.14594512674412766,
+      "ci_coverage": 1.0
+    },
+    "dml": {
+      "mean_estimate": 1.9906133432063366,
+      "bias": -0.00938665679366335,
+      "rmse": 0.03942951490725008,
+      "ci_coverage": 1.0
+    },
+    "did": {
+      "true_effect": 5.0,
+      "mean_estimate": 5.069591428571449,
+      "bias": 0.0695914285714494,
+      "ci_coverage": 0.85
+    }
+  },
+  "real_data": {
+    "lalonde": {
+      "experimental_benchmark": 1794,
+      "naive": -8497.516317858252,
+      "psm_att": 1707.317081081081,
+      "psm_ci": [
+        2.495374324324254,
+        3193.4467864864873
+      ],
+      "dml_att": 1243.2553765464525
+    },
+    "prop99": {
+      "synthetic_control_att": -19.513635003223946,
+      "relative": -0.24433692509032703,
+      "pre_rmspe": 1.6564004002575001,
+      "placebo_p": 0.07692307692307693,
+      "did_twfe": -27.349111265004524,
+      "did_pretrend_p": 1.4480090806205153e-49
+    }
+  },
+  "latency": {
+    "power/sample-size": 0.02685966300009568,
+    "experiments/chisquare (40k rows)": 0.021849180999879536,
+    "experiments/sequential mSPRT": 0.022064198999942164,
+    "experiments/bayesian (PyMC)": 1.355768678000004,
+    "causal/psm (16k rows, refuters + DML)": 4.623075615999824,
+    "causal/synthetic-control (+38 placebos)": 0.33690663399988807
+  }
+}
