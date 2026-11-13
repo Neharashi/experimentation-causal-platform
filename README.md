@@ -46,7 +46,7 @@ Open http://localhost:8000 (UI) and http://localhost:8000/docs (API docs).
 
 ### Option B — Local development
 
-**Backend** (Python 3.11 – 3.12 recommended)
+**Backend** (requires **Python 3.13** — DoWhy 0.14 needs it alongside the other libraries)
 ```bash
 cd backend
 python -m venv venv
