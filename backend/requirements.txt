@@ -8,5 +8,5 @@ scipy>=1.13
 statsmodels>=0.14.2
 scikit-learn>=1.5
 pymc>=5.16
-dowhy>=0.12
+dowhy>=0.14
 econml>=0.15
